@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plan</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000; /* Change background color */
+            color: #fff; /* Change text color */
+        }
+
+        .text-3xl {
+            font-size: 3rem;
+            animation: bounce 2s infinite; 
+            color: #1258ef; /* Change text color */
+        }
+
+        .text-blue-400 {
+            color: #3182ce; /* Change blue color */
+        }
+
+        .bg-blue-400 {
+            background-color: #3182ce; /* Change blue color */
+        }
+
+        .bg-blue-500 {
+            background-color: #2c5282; /* Darker blue for popular plan */
+        }
+
+        .bg-blue-700 {
+            background-color: #2a4365; /* Darker blue for non-popular plans */
+        }
+
+        .confirmation-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .confirmation-box p {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .confirmation-box button {
+            background-color: #3182ce;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .confirmed-animation {
+            animation: confirmedAnimation 1s ease-out forwards;
+        }
+
+        @keyframes confirmedAnimation {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <div class="confirmation-box" id="confirmationBox">
+        <div class="confirmed-animation">
+            <i class="fas fa-check-circle text-5xl text-green-500 mb-4"></i>
+            <p>Thanks for purchasing!</p>
+        </div>
+        <button id="downloadButton" class="hidden">Download</button>
+    </div>
+
+    <script type="text/babel">
+        function downloadProgram() {
+            // Replace 'http://example.com/path/to/your/zip/file.zip' with the actual URL of your ZIP file
+            const downloadUrl = '/download_program';
+
+            
+            // Create a hidden anchor element
+            const downloadLink = document.createElement('a');
+            downloadLink.href = downloadUrl;
+            downloadLink.download = 'gesture_controlled_game.zip'; // Replace with the desired filename for the ZIP file
+            document.body.appendChild(downloadLink);
+            
+            // Trigger the click event on the anchor element
+            downloadLink.click();
+            
+            // Clean up: remove the anchor element from the DOM
+            document.body.removeChild(downloadLink);
+        }
+
+        function showConfirmationBox() {
+            const confirmationBox = document.getElementById("confirmationBox");
+            confirmationBox.style.display = "block";
+
+            setTimeout(() => {
+                const downloadButton = document.getElementById("downloadButton");
+                downloadButton.classList.remove("hidden");
+            }, 1000); // Adjust delay time as needed
+        }
+
+        function redirectToEmail() {
+            // Define the email address
+            const emailAddress = '210701204@rajalakshmi.edu.in';
+
+            // Define the subject and body of the email (optional)
+            const subject = 'Inquiry about pricing plans';
+            const body = 'Hi there,\n\nI would like to inquire about your pricing plans.';
+
+            // Construct the mailto link
+            const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Redirect to the mailto link
+            window.location.href = mailtoLink;
+        }
+
+        function App() {
+            return (
+                <div className="container mx-auto px-4">
+                    <div class="text-3xl font-bold">AeroNav</div>
+                    <header className="text-center py-12">
+                        <h1 className="text-4xl font-bold mb-4">Pricing Plan</h1>
+                        <div className="flex justify-center items-center gap-4 mb-12">
+                        </div>
+                        <h2 className="text-6xl font-bold mb-4">Choose the plan that suits your needs.</h2>
+                        <div className="flex justify-center gap-4">
+                            <button className="bg-blue-400 text-black px-6 py-3 rounded-lg" onClick={showConfirmationBox}>Get started for free</button>
+                            <button className="bg-transparent text-blue-400 px-6 py-3 rounded-lg border border-blue-400" onClick={redirectToEmail}>Contact sales</button>
+                        </div>
+                    </header>
+                    <section className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12">
+                        {[
+                            { title: 'Basic', price: '$0', description: '*Free for personal use', popular: false, features: ['Real-time gesture recognition', 'Basic analytics dashboard', 'Community support'], checked: [true, false, false], crossed: [false, true, true] },
+                            { title: 'Pro', price: '$19', description: '*Best for small businesses', popular: true, features: ['Real-time gesture recognition', 'Advanced analytics dashboard', 'Priority support'], checked: [true, true, false], crossed: [false, false, true] },
+                            { title: 'Enterprise', price: 'Contact Us', description: '*Tailored for large organizations', popular: false, features: ['Real-time gesture recognition', 'Advanced analytics dashboard', 'Dedicated account manager'], checked: [true, true, true], crossed: [false, false, false] },
+                        ].map((plan, index) => (
+                            <div key={index} className={`p-6 rounded-lg ${plan.popular ? 'bg-blue-500' : 'bg-blue-700'}`}>
+                                <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
+                                <p className="text-4xl font-bold mb-2">{plan.price}</p>
+                                <p className="mb-6">{plan.description}</p>
+                                <p className="font-bold mb-4">Features</p>
+                                <ul>
+                                    {plan.features.map((feature, i) => (
+                                        <li key={i} className="mb-2 flex items-center">
+                                            <i className={`mr-2 fas fa-${plan.checked[i] ? 'check' : 'times'} ${plan.checked[i] ? 'checked-feature' : 'crossed-feature'}`}></i>
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </section>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('app'));
+
+        document.getElementById("downloadButton").addEventListener("click", downloadProgram);
+    </script>
+</body>
+</html>

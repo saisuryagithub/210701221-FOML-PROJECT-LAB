@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - AeroNav</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('https://iiot-world-com.b-cdn.net/wp-content/uploads/2017/08/machine-learning-hand-robot-touching-computer-chip-binary-data.jpg');
+            background-size: cover;
+            background-position: relative;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            animation: pulseBackground 10s infinite alternate; /* Add background pulse animation */
+        }
+
+
+        .btn {
+            background-color: #0b79f0; /* Change button background color */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease; 
+        }
+
+        .btn:hover {
+            background-color: #008ee6; /* Change button background color on hover */
+        }
+        @keyframes pulseBackground {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        .text-3xl {
+            font-size: 3rem;
+            animation: bounce 2s infinite; 
+            color: #1258ef; /* Change text color */
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .text-gray-300 {
+            color: #ccc; 
+            font-style: italic; 
+        }
+
+        .summary-container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 75%; /* 16:9 aspect ratio */
+            margin-top: 10px; /* Adjust spacing */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 60; /* Move video container to the right */
+            width: 95%; /* Set width to 50% of the parent container */
+            height: 150%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-6 py-8">
+        <div class="flex justify-between items-center">
+            <div class="text-3xl font-bold">
+                <a href="/">AeroNav</a>
+             </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="\about" class="hover:text-grey-800">About</a>
+                <a href="feature.html" class="hover:text-gray-300">Features</a>
+                <a href="#" class="hover:text-gray-300">Contact</a>
+                <a href="#" class="hover:text-gray-300">Product</a>
+            </div>
+            <a href="/pricing" class="btn">View Product</a>
+        </div>
+        <div class="flex flex-wrap items-center mt-12">
+            <div class="w-full md:w-1/2">
+                <div class="summary-container">
+                    <h1 class="text-4xl font-bold mb-6">
+                        Know AeroNav
+                    </h1>
+                    <p class="text-gray-300 mb-6">
+                        Discover the power of OpenCV Python for AI gesture recognition, a groundbreaking technology in human-computer interaction.
+                    </p>
+                    <ul class="list-disc list-inside">
+                        <li class="text-gray-300">OpenCV: Open Source Computer Vision library for real-time computer vision.</li>
+                        <li class="text-gray-300">Installation: Simply use <code>pip install opencv-python</code> in your Python environment.</li>
+                        <li class="text-gray-300">Process: Capture video frame, convert to grayscale, apply Gaussian blur, thresholding, and contour detection.</li>
+                        <li class="text-gray-300">AI Model: Train the model with hand gestures and corresponding outcomes for recognition.</li>
+                    </ul>
+                    <p class="text-gray-300 mt-4">
+                        Dive into the future of AI and gesture recognition with AeroNav!
+                    </p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="video-container">
+                    <!-- Replace 'your_video_url' with the actual path to your local video file -->
+                    <iframe src="/static/videos/product.mp4" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

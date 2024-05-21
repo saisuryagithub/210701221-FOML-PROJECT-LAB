@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroNav</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('https://iiot-world-com.b-cdn.net/wp-content/uploads/2017/08/machine-learning-hand-robot-touching-computer-chip-binary-data.jpg');
+            background-size: cover;
+            background-position: relative;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            animation: pulseBackground 10s infinite alternate; /* Add background pulse animation */
+        }
+
+        @keyframes pulseBackground {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        .text-3xl {
+            font-size: 3rem;
+            animation: bounce 2s infinite; 
+            color: #1258ef; /* Change text color */
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .text-gray-300 {
+            color: #ccc; 
+            font-style: italic; 
+        }
+
+        .btn {
+            background-color: #0b79f0; /* Change button background color */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease; 
+        }
+
+        .btn:hover {
+            background-color: #008ee6; /* Change button background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-6 py-8">
+        <div class="flex justify-between items-center">
+            <div class="text-3xl font-bold">
+                AeroNav
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="about.html" class="hover:text-grey-800">About</a>
+                <a href="feature.html" class="hover:text-gray-300">Features</a>
+                <a href="#" class="hover:text-gray-300">Contact</a>
+                <a href="/product" class="hover:text-gray-300">Product</a>
+            </div>
+            <!-- Moved the login button to the right -->
+            <a href="/login" class="btn">logout</a>
+        </div>
+        <div class="flex flex-wrap items-center mt-12">
+            <div class="w-full md:w-1/2">
+                <h1 class="text-6xl font-bold mb-6">
+                    Welcome to AeroNav
+                </h1>
+                <p class="text-gray-300 mb-6">
+                    Experience the future of navigation with our 3D hand gesture recognition technology.
+                </p>
+                <a href="/pricing" class="btn">
+                    Start your free trial
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

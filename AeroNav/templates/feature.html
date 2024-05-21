@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - AeroNav</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('https://iiot-world-com.b-cdn.net/wp-content/uploads/2017/08/machine-learning-hand-robot-touching-computer-chip-binary-data.jpg');
+            background-size: cover;
+            background-position: relative;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            animation: pulseBackground 10s infinite alternate; /* Add background pulse animation */
+        }
+
+        @keyframes pulseBackground {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        .text-3xl {
+            font-size: 3rem;
+            animation: bounce 2s infinite; 
+            color: #1258ef; /* Change text color */
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .text-gray-300 {
+            color: #ccc; 
+            font-style: italic; 
+        }
+
+        .btn {
+            background-color: #0b79f0; /* Change button background color */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease; 
+        }
+
+        .btn:hover {
+            background-color: #008ee6; /* Change button background color on hover */
+        }
+
+        /* Additional animations */
+        .fade-in {
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Additional styles */
+        .feature-item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease; /* Add smooth transition on hover */
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px); /* Move the feature item slightly up on hover */
+        }
+
+        .feature-item img {
+            margin-right: 12px; /* Add space between icon and text */
+        }
+
+        .feature-item span {
+            margin-left: 12px; /* Add space between icon and text */
+        }
+
+        .feature-item i {
+            transition: color 0.3s ease; /* Add smooth transition on icon color change */
+        }
+
+        .feature-item:hover i {
+            color: #008ee6; /* Change icon color on hover */
+            animation: bounceOnce 0.5s linear; /* Add bouncing animation on hover */
+        }
+
+        @keyframes bounceOnce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .flex {
+            display: flex; /* Ensure flexbox layout */
+            justify-content: space-between; /* Distribute items evenly along the main axis */
+            align-items: center; /* Center items along the cross axis */
+        }
+
+        .space-x-8 > * + * {
+            margin-left: 8px; /* Add space between adjacent elements */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-6 py-8">
+        <div class="flex justify-between items-center">
+            <div class="text-3xl font-bold">
+               <a href="\">AeroNav</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="\" class="hover:text-grey-800">Home</a>
+                <a href="#" class="hover:text-gray-300">Features</a>
+                <a href="#" class="hover:text-gray-300">Contact</a>
+                <a href="\product" class="hover:text-gray-300">Product</a> <!-- Changed from "Product" to "Services" -->
+            </div>
+            <button class="">
+                
+            </button>
+        </div>
+        <div class="flex flex-wrap items-center mt-12">
+            <div class="w-full md:w-1/2">
+                <h1 class="text-2xl font-bold mb-6">
+                    Features of AeroNav
+                </h1>
+                <div class="feature-item mb-8 fade-in">
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/one-finger--v1.png" alt="one-finger--v1"/>
+                    <span class="text-gray-300">Intuitive Hand Gesture Control</span>
+                    <p class="text-sm text-gray-400 mt-2">Control your device with simple hand gestures, making navigation effortless.</p>
+                </div>
+                
+                <div class="feature-item mb-8 fade-in">
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/geography--v1.png" alt="geography--v1"/>
+                    <span class="text-gray-300">Universal Compatibility</span>
+                    <p class="text-sm text-gray-400 mt-2">Compatible with a wide range of devices and platforms, ensuring seamless integration.</p>
+                </div>
+                
+                <div class="feature-item mb-8 fade-in">
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/circled-play--v1.png" alt="circled-play--v1"/>
+                    <span class="text-gray-300">Seamless Multimedia Control</span>
+                    <p class="text-sm text-gray-400 mt-2">Effortlessly control multimedia playback, including music, videos, and presentations.</p>
+                </div>
+                
+                <div class="feature-item mb-8 fade-in">
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/monitor--v1.png" alt="monitor--v1"/>
+                    <span class="text-gray-300">Multi Platform Support</span>
+                    <p class="text-sm text-gray-400 mt-2">Supports multiple platforms, including desktop, mobile, and wearable devices.</p>
+                </div>
+                
+                <div class="feature-item mb-8 fade-in">
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/nintendo-gamecube-controller.png" alt="nintendo-gamecube-controller"/>
+                    <span class="text-gray-300">Gaming Control</span>
+                    <p class="text-sm text-gray-400 mt-2">Enhance your gaming experience with intuitive hand gestures for controls.</p>
+                </div>
+                
+                <a href="\pricing" class="btn fade-in">
+                    Experience AeroNav Now
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
